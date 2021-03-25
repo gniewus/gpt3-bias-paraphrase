@@ -198,12 +198,12 @@ a.article:hover {
     -moz-box-shadow: -1px 7px 34px -12px rgba(0,0,0,0.35);
     box-shadow: -1px 7px 34px -12px rgba(0,0,0,0.35);
 }
-.force-select-all {
+/* .force-select-all {
     -webkit-user-select: all;
     -moz-user-select: all;
     -ms-user-select: all;
     user-select: all;
-  }
+  } */
 
   .highlight {
     
@@ -222,3 +222,11 @@ a.article:hover {
     transition-timing-function: ease-in;
     transition-delay: 0s;  
   }
+
+  li.job-item {
+    list-style-type: " 🔘 ";
+  }
+
+  li.job-item.changed {
+    list-style-type: " ☑️ ";
+    }

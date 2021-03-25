@@ -6,65 +6,43 @@
             Medium article for details.</a>
     </p></div> -->
     <div class="job-advert container card">
+        <div class="row">
+            <div class='col-md-6'>
+                <div class='text-center'>
+                    <p style='color:lightgrey; font-style:italic'>Female-biased</p>
+                </div>
+            </div>
+            <div class='col-md-6'>
+                <div class='text-center'>
+                    <p style='color:lightgrey; font-style:italic'>Male-biased</p>
+                </div>
+            </div>
+        </div>
         <div class="col-md-12 text-center">
-            <h3>Company description</h3> </br>
+            <h2>Retail sales manager<h2></br>
+                    <h4>Company description</h4> </br>
         </div>
         <div class='row card-body '>
             <div class='col-md-6'>
                 <ul class="list-group">
-
-                    <li class="item force-select-all effect-underline ">
-                        <p class="magic">We are a dominant engineering firm that <span class='highlight'>boasts</span> many leading
-                            clients.</p>
+                    <li class="item job-item  ">
+                        <p>We are a committed provider of dependable plumbing solutions.</p>
                     </li>
-                    <li class="item force-select-all">
-                        <p>We are a community of engineers who have effective relationships with many satisfied clients.
+                    <li class="item job-item">
+                        <p>We have many loyal clients, and deliver honest, personal service.
                         </p>
                     </li>
-                    <li class="item force-select-all">
-                        <p>We are a dominant engineering firm that boasts many leading clients.</p>
-                    </li>
-                    <li class="item force-select-all">
-                        <p>We are a dominant engineering firm that boasts many leading clients.</p>
-                    </li>
-                    <li class="item force-select-all">
-                        <p>We are committed to understanding the engineering sector intimately.</p>
-                    </li>
-                    <li class="item force-select-all">
-                        <p>We are determined to stand apart from the competition.</p>
-                    </li>
                 </ul>
-
             </div>
             <div class='col-md-6'>
                 <ul class="list-group">
-
-                    <li class="item force-select-all">
-                        <p>Proficient oral and written communication skills.</p>
+                    <li class="item job-item">
+                        <p>We are determined company that delivers superior plumbing</p>
                     </li>
-                    <li class="item force-select-all">
-                        <p>Strong communication and influencing skills.</p>
-                    </li>
-                    <li class="item force-select-all">
-                        <p>Collaborates well, in a team environment.</p>
-                    </li>
-                    <li class="item force-select-all">
-                        <p>Sensitive to clients’ needs, can develop warm client relationships.</p>
-                    </li>
-                    <li class="item force-select-all">
-                        <p>Sensitive to clients’ needs, can develop warm client relationships.</p>
-                    </li>
-                    <li class="item force-select-all">
-                        <p>Sensitive to clients’ needs, can develop warm client relationships.</p>
-                    </li>
-                    <li class="item force-select-all">
-                        <p>Sensitive to clients’ needs, can develop warm client relationships.</p>
-                    </li>
-                    <li class="item force-select-all">
-                        <p>Sensitive to clients’ needs, can develop warm client relationships.</p>
+                    <li class="item job-item">
+                        <p>We are proud of our success, and boast an impressive record.</p>
                     </li>
                 </ul>
-
             </div>
         </div>
         <div class='row'>
@@ -73,53 +51,61 @@
             </div>
             <div class='col-md-6'>
                 <ul class="list-group">
-                    <li class="item force-select-all">
-                        <p>Bachelor of Engineering degree or higher from
-                            recognized university.</p>
+                    <li class="item job-item">
+                        <p>Dependable, with demonstrated commitment to client service.</p>
                     </li>
-                    <li class="item force-select-all">
-                        <p>Registered as a Professional Engineer.</p>
+                    <li class="item job-item">
+                        <p>Can interpret blueprints and schematics</p>
                     </li>
-                    <li class="item force-select-all">
-                        <p>Ability to perform individually in a competitive
-                            environment.</p>
-                    </li>
-
-                    <li class="item force-select-all">
-                        <p>Help clients with construction activities.</p>
+                    <li class="item job-item">
+                        <p>Licensed/certified plumber from recognized community college or related program.</p>
                     </li>
                 </ul>
-
             </div>
             <div class='col-md-6'>
                 <ul class="list-group">
-                    <li class="item force-select-all">
-                        <p>Bachelor of Engineering degree or higher from
-                            recognized university.</p>
+                    <li class="item job-item">
+                        <p>Self-reliant, with demonstrated ability to perform tasks independently.</p>
                     </li>
-                    <li class="item force-select-all">
-                        <p>Superior ability to satisfy customers and manage
-                            company’s association with them.</p>
+                    <li class="item job-item">
+                        <p>Ability to analyze blueprints and schematics.</p>
                     </li>
-                    <li class="item force-select-all">
-                        <p>Provide general support to project teams in a manner
-                            complimentary to the company.</p>
-                    </li>
-                    <li class="item force-select-all">
-                        <p>Registered as a Professional Engineer.</p>
-                    </li>
-                    <li class="item force-select-all">
-                        <p>Direct project groups to manage project progress and
-                            ensure accurate task control.</p>
-                    </li>
-                    <li class="item force-select-all">
-                        <p>Determine compliance with client’s objetives</p>
+                    <li class="item job-item">
+                        <p>Licensed/certified plumber from recognized community college or related program.</p>
                     </li>
                 </ul>
-
-
             </div>
+        
+        <div class="col-md-12 text-center">
+            <h3>Responsibilites</h3> </br>
         </div>
-
+        <div class='col-md-6'>
+            <ul class="list-group">
+                <li class="item job-item">
+                    <p>Service our clients’ plumbing systems.</p>
+                </li>
+                <li class="item job-item">
+                    <p>Respond to plumbing problems and find innovative repair solutions.</p>
+                </li>
+                <li class="item job-item">
+                    <p>Collaborate on new building projects, providing plumbing advice.</p>
+                </li>
+            </ul>
+        </div>
+        <div class='col-md-6'>
+            <ul class="list-group">
+                <li class="item job-item">
+                    <p>Maintain customers’ plumbing systems.</p>
+                </li>
+                <li class="item job-item">
+                    <p>Analyze problems logically and troubleshoot to determine needed repairs</p>
+                </li>
+                <li class="item job-item">
+                    <p>Deliver plumbing expertise on new building projects.</p>
+                </li>
+            </ul>
+        </div>
     </div>
+</div>
+</div>
 </div>

@@ -70,36 +70,42 @@
                 /\b(Strong)|\b(Active)|\b(Affectionate)|\b(Adventurous)|\b(Child\w*)|\b(Aggress\w*)|\b(Cheer\w*)|\b(Ambitio\w*)|\b(Commit\w*)|\b(Analy\w*)|\b(Communal)|\b(Assert\w*)|\b(Compassion\w*)|\b(Athlet\w*)|\b(Connect\w*)|\b(Autonom\w*)|\b(Considerate)|\b(Boast\w*)|\b(Cooperat\w*)|\b(Challeng\w*)|\b(Depend\w*)|\b(Compet\w*)|\b(Emotiona\w*)|\b(Confident)|\b(Empath\w*)|\b(Courag\w*)|\b(Feminine)|\b(Decide)|\b(Flatterable)|\b(Decisive)|\b(Gentle)|\b(Decision\w*)|\b(Honest)|\b(Determin\w*)|\b(Interpersonal)|\b(Dominant)|\b(Interdependen\w*)|\b(Domina\w*)|\b(Interpersona\w*)|\b(Force\w*)|\b(Kind)|\b(Greedy)|\b(Kinship)|\b(Headstrong)|\b(Loyal\w*)|\b(Hierarch\w*)|\b(Modesty)|\b(Hostil\w*)|\b(Nag)|\b(Implusive)|\b(Nurtur\w*)|\b(Independen\w*)|\b(Pleasant\w*)|\b(Individual\w*)|\b(Polite)|\b(Intellect\w*)|\b(Quiet\w*)|\b(Lead\w*)|\b(Respon\w*)|\b(Logic)|\b(Sensitiv\w*)|\b(Masculine)|\b(Submissive)|\b(Objective)|\b(Support\w*)|\b(Opinion)|\b(Sympath\w*)|\b(Outspoken)|\b(Tender\w*)|\b(Persist)|\b(Together\w*)|\b(Principle\w*)|\b(Trust\w*)|\b(Reckless)|\b(Understand\w*)|\b(Stubborn)|\b(Warm\w*)|\b(Superior)|\b(Whin\w*)|\b(Self-confiden\w*)|\b(Yield\w*)/ig,
                 "<span class='highlight'>$&</span>")
 
-            console.log(val)
+            
             $(this).replaceWith("<p>" + val + "</p>")
         }
 
+        
+        $(menu).find('.paraphraseit')[0].onclick = function() {console.log()}
+        tippy('li p', {
+            content:`<div class="show" >
+            <button type="button" class="btn btn-primary paraphraseit">Paraphrase me</button>
+                        </div>`,
+            allowHTML: true,
+            hideOnClick: true,
+            trigger: 'mouseenter click focus',
+            delay: [null, 100],
+            interactive: true,
 
-        $("li p").each(highlite)
+            onShow(instance) {
+                    console.log(instance.reference);
+                    $(instance.popper).find("button")[0].onclick = function(){
+                        var $this = $(this);
+                        $this.addClass('disabled').html("Loading...");
+                        
+                        setTimeout(function(){
+                            $this.removeClass('disabled').html('Paraphrase me');
 
-        // tippy('li p', {
-        //     content: 'My tooltip!',
-        // });
+                        },1000)
+                        askGPT(instance.reference,instance.reference.parentElement)
+                    }    
+                },
+        });
 
-        var HIGHLIGHT_ICON_SVG =
-            '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path xmlns="http://www.w3.org/2000/svg" fill="white" d="M24.001 8.534l-11.103 11.218-5.898 1.248 1.361-5.784 11.104-11.216 4.536 4.534zm-24 10.466l-.001 2h5v-2h-4.999z"/></svg>';
-        var TWITTER_ICON_SVG =
-            '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path xmlns="http://www.w3.org/2000/svg" fill="white" d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg>';
-        var FACEBOOK_ICON_SVG =
-            '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path xmlns="http://www.w3.org/2000/svg" fill="white" d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"/></svg>';
-        var config = {};
+      
 
-        config.buttons = [{
-            svg: HIGHLIGHT_ICON_SVG,
-            onclick: function (e, range) {
-                console.info(range.commonAncestorContainer)
-                 
-                if(!range.commonAncestorContainer.tagName){
-                    paragraphContainer = range.commonAncestorContainer.parentNode
-                }else {paragraphContainer=range.commonAncestorContainer}
-
-                if (paragraphContainer.tagName == "P") {
-                    let req = $.post({
+        function askGPT(paragraphContainer,parent) {
+        
+            let req = $.post({
                         url: "/api",
                         data: JSON.stringify({
                             "data": paragraphContainer.textContent
@@ -108,7 +114,7 @@
                         //dataType: 'json',
                     });
                     req.done(function (response) {
-
+                        $(paragraphContainer).fadeOut(500)
                         res = JSON.parse(response)
 
                         $(paragraphContainer)
@@ -116,33 +122,42 @@
                                 return res.data;
                             })
                         $(paragraphContainer).map(highlite)
-                        window.clearTooltip()
+                        $(paragraphContainer).fadeIn(500)
+                        $(parent).addClass("changed")
+                        tippy(paragraphContainer, {
+                            content:`<div class="show" >
+                                <button type="button" class="btn btn-primary paraphraseit">Paraphrase me</button>
+                                </div>`,
+                            allowHTML: true,
+                            hideOnClick: true,
+                            trigger: 'mouseenter click focus',
+                            delay: [null, 100],
+                            interactive: true,
+
+                            onShow(instance) {
+                                $(instance.popper).find("button")[0].onclick = function(){
+                                    var $this = $(this);
+                                    console.log($this)
+                                    askGPT(instance.reference,instance.reference.parentElement)
+                                }
+                                
+                            },
+                        });
                     })
-                }
-            }
-        }];
-
-
-        document.addEventListener("DOMContentLoaded", function (event) {
-            var CONTAINER_ID = '5kjl3_container_id';
-
-            window.TinyQ.init(config);
-            window.clearTooltip = function clear() {
-                var e = document.getElementById(CONTAINER_ID);
-                if (e) {
-                    e.parentElement.removeChild(e);
-                }
-}
-        });
+        }
 
 
 
 
-        // $(document).ready(function () {
-        //     $("#sidebar").mCustomScrollbar({
-        //         theme: "minimal"
-        //     });
 
+
+
+        $(document).ready(function () {
+             $("#sidebar").mCustomScrollbar({
+                 theme: "minimal"
+             });
+            
+            $("li p").each(highlite)
         //     $('#dismiss, .overlay').on('click', function () {
         //         $('#sidebar').removeClass('active');
         //         $('.overlay').removeClass('active');
@@ -154,7 +169,8 @@
         //         $('.collapse.in').toggleClass('in');
         //         $('a[aria-expanded=true]').attr('aria-expanded', 'false');
         //     });
-        // });
+        
+        });
     </script>
     {% endblock %}
 </body>
