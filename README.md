@@ -53,5 +53,5 @@ $ pytest -v
 ```
 
 ## Licence
-
-Boilerplate Code : [Copyright 2021 Shinichi Okada](https://levelup.gitconnected.com/building-a-website-starter-with-fastapi-92d077092864)
+Boilerplate Frontend: Copyright 2013-2020 Start Bootstrap LLC. Code released under the [MIT](https://github.com/StartBootstrap/startbootstrap-resume/blob/gh-pages/LICENSE) license.
+Boilerplate Backend : [Copyright 2021 Shinichi Okada](https://levelup.gitconnected.com/building-a-website-starter-with-fastapi-92d077092864)

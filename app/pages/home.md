@@ -5,6 +5,22 @@
     <p>Please read <a href="https://levelup.gitconnected.com/building-a-website-starter-with-fastapi-92d077092864">my
             Medium article for details.</a>
     </p></div> -->
+    
+        <div class="jumbotron p-3 p-md-5 text-white rounded bg-dark">
+            <div class="col-md-12 px-0">
+            <h1 class="display-4 font-bold
+            ">Change a bias job ad yourself!</h1>
+            <p class="lead my-3" style="color:lightgrey">This demo shows how GPT-3 can be used to paraphrase a gender-biased job descriptions.</br>
+            </br>
+            The <span class='highlight text-white'>highlited</span> words belong to a list of "Coded Masculine and Feminine Words" from the <a href='http://google.com' class="link">paper</a>, which should rather be avoided.
+            To learn more about it see my  <a style='color:blue' href='http://medium.com'>blog post</a>.
+            </p> 
+            <p class="lead mb-0 text-white font-weight-bold">Hover your mouse over buletpoints....</p>
+            </div>
+        </div>
+    
+    
+
     <div class="job-advert container card">
         <div class="row">
             <div class='col-md-6'>

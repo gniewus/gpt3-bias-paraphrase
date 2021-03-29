@@ -67,7 +67,7 @@
         var highlite = function () {
             var val = $(this).text()
             val = val.replace(
-                /\b(Strong)|\b(Active)|\b(Affectionate)|\b(Adventurous)|\b(Child\w*)|\b(Aggress\w*)|\b(Cheer\w*)|\b(Ambitio\w*)|\b(Commit\w*)|\b(Analy\w*)|\b(Communal)|\b(Assert\w*)|\b(Compassion\w*)|\b(Athlet\w*)|\b(Connect\w*)|\b(Autonom\w*)|\b(Considerate)|\b(Boast\w*)|\b(Cooperat\w*)|\b(Challeng\w*)|\b(Depend\w*)|\b(Compet\w*)|\b(Emotiona\w*)|\b(Confident)|\b(Empath\w*)|\b(Courag\w*)|\b(Feminine)|\b(Decide)|\b(Flatterable)|\b(Decisive)|\b(Gentle)|\b(Decision\w*)|\b(Honest)|\b(Determin\w*)|\b(Interpersonal)|\b(Dominant)|\b(Interdependen\w*)|\b(Domina\w*)|\b(Interpersona\w*)|\b(Force\w*)|\b(Kind)|\b(Greedy)|\b(Kinship)|\b(Headstrong)|\b(Loyal\w*)|\b(Hierarch\w*)|\b(Modesty)|\b(Hostil\w*)|\b(Nag)|\b(Implusive)|\b(Nurtur\w*)|\b(Independen\w*)|\b(Pleasant\w*)|\b(Individual\w*)|\b(Polite)|\b(Intellect\w*)|\b(Quiet\w*)|\b(Lead\w*)|\b(Respon\w*)|\b(Logic)|\b(Sensitiv\w*)|\b(Masculine)|\b(Submissive)|\b(Objective)|\b(Support\w*)|\b(Opinion)|\b(Sympath\w*)|\b(Outspoken)|\b(Tender\w*)|\b(Persist)|\b(Together\w*)|\b(Principle\w*)|\b(Trust\w*)|\b(Reckless)|\b(Understand\w*)|\b(Stubborn)|\b(Warm\w*)|\b(Superior)|\b(Whin\w*)|\b(Self-confiden\w*)|\b(Yield\w*)/ig,
+                /\b(Strong)|\b(Active)|\b(Affectionate)|\b(Adventurous)|\b(Child\w*)|\b(Aggress\w*)|\b(Cheer\w*)|\b(Ambitio\w*)|\b(Commit\w*)|\b(Analy\w*)|\b(Communal)|\b(Assert\w*)|\b(Compassion\w*)|\b(Athlet\w*)|\b(Connect\w*)|\b(Autonom\w*)|\b(Considerate)|\b(Boast\w*)|\b(Cooperat\w*)|\b(Challeng\w*)|\b(Depend\w*)|\b(Compet\w*)|\b(Emotiona\w*)|\b(Confident)|\b(Empath\w*)|\b(Courag\w*)|\b(Feminine)|\b(Decide)|\b(Flatterable)|\b(Decisive)|\b(Gentle)|\b(Decision\w*)|\b(Honest)|\b(Determin\w*)|\b(Interpersonal)|\b(Dominant)|\b(Interdependen\w*)|\b(Domina\w*)|\b(Interpersona\w*)|\b(Force\w*)|\b(Kind)|\b(Greedy)|\b(Kinship)|\b(Headstrong)|\b(Loyal\w*)|\b(Hierarch\w*)|\b(Modesty)|\b(Hostil\w*)|\b(Nag)|\b(Implusive)|\b(Nurtur\w*)|\b(Independen\w*)|\b(Pleasant\w*)|\b(Individual\w*)|\b(Polite)|\b(Intellect\w*)|\b(Quiet\w*)|\b(Lead\w*)|\b(Logic)|\b(Sensitiv\w*)|\b(Masculine)|\b(Submissive)|\b(Objective)|\b(Support\w*)|\b(Opinion)|\b(Sympath\w*)|\b(Outspoken)|\b(Tender\w*)|\b(Persist)|\b(Together\w*)|\b(Principle\w*)|\b(Trust\w*)|\b(Reckless)|\b(Understand\w*)|\b(Stubborn)|\b(Warm\w*)|\b(Superior)|\b(Whin\w*)|\b(Self-confiden\w*)|\b(Yield\w*)/ig,
                 "<span class='highlight'>$&</span>")
 
             
@@ -75,33 +75,6 @@
         }
 
         
-        $(menu).find('.paraphraseit')[0].onclick = function() {console.log()}
-        tippy('li p', {
-            content:`<div class="show" >
-            <button type="button" class="btn btn-primary paraphraseit">Paraphrase me</button>
-                        </div>`,
-            allowHTML: true,
-            hideOnClick: true,
-            trigger: 'mouseenter click focus',
-            delay: [null, 100],
-            interactive: true,
-
-            onShow(instance) {
-                    console.log(instance.reference);
-                    $(instance.popper).find("button")[0].onclick = function(){
-                        var $this = $(this);
-                        $this.addClass('disabled').html("Loading...");
-                        
-                        setTimeout(function(){
-                            $this.removeClass('disabled').html('Paraphrase me');
-
-                        },1000)
-                        askGPT(instance.reference,instance.reference.parentElement)
-                    }    
-                },
-        });
-
-      
 
         function askGPT(paragraphContainer,parent) {
         
@@ -126,7 +99,7 @@
                         $(parent).addClass("changed")
                         tippy(paragraphContainer, {
                             content:`<div class="show" >
-                                <button type="button" class="btn btn-primary paraphraseit">Paraphrase me</button>
+                                <button type="button" class="btn btn-primary paraphraseit">Paraphrase it using GPT</button>
                                 </div>`,
                             allowHTML: true,
                             hideOnClick: true,
@@ -137,7 +110,12 @@
                             onShow(instance) {
                                 $(instance.popper).find("button")[0].onclick = function(){
                                     var $this = $(this);
-                                    console.log($this)
+                                    $this.addClass('disabled').html("Loading...");
+                                    
+                                    setTimeout(function(){
+                                        $this.removeClass('disabled').html('Paraphrase it using GPT');
+
+                                    },1000)
                                     askGPT(instance.reference,instance.reference.parentElement)
                                 }
                                 
@@ -148,7 +126,11 @@
 
 
 
+        tippy(".d-none.d-lg-block",{
+            
+            content:"Hover on the buletpoints to paraphrase it! "
 
+        })
 
 
 
@@ -158,6 +140,31 @@
              });
             
             $("li p").each(highlite)
+
+        tippy('li p', {
+            content:`<div class="show" >
+            <button type="button" class="btn btn-primary paraphraseit">Paraphrase it using GPT</button>
+                        </div>`,
+            allowHTML: true,
+            hideOnClick: true,
+            trigger: 'mouseenter click focus',
+            delay: [null, 100],
+            interactive: true,
+
+            onShow(instance) {
+                    console.log(instance.reference);
+                    $(instance.popper).find("button")[0].onclick = function(){
+                        var $this = $(this);
+                        $this.addClass('disabled').html("Loading...");
+                        
+                        setTimeout(function(){
+                            $this.removeClass('disabled').html('Paraphrase it!');
+
+                        },1000)
+                        askGPT(instance.reference,instance.reference.parentElement)
+                    }    
+                },
+        });
         //     $('#dismiss, .overlay').on('click', function () {
         //         $('#sidebar').removeClass('active');
         //         $('.overlay').removeClass('active');

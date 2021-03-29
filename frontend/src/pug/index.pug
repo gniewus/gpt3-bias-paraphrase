@@ -1,0 +1,195 @@
+doctype html
+html(lang='en')
+
+    head
+
+        meta(charset='utf-8')
+        meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+        meta(name='description', content='Demo App showcasing capabilities of GPT-3 for parahrasing a biased content.')
+        meta(name='author', content='Tomasz Tkaczyk')
+
+        title GPT-3 Paraphraser
+
+        link(rel='icon', type='image/x-icon', href='assets/img/favicon.ico')
+
+        // Font Awesome icons (free version)
+        script(src='https://use.fontawesome.com/releases/v5.15.1/js/all.js', crossorigin='anonymous')
+
+        script( src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js")
+        script( src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js")
+
+
+        // Google fonts
+        link(href='https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700', rel='stylesheet', type='text/css')
+        link(href='https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i', rel='stylesheet', type='text/css')
+
+        // Core theme CSS (includes Bootstrap)
+        link(href='css/styles.css', rel='stylesheet')
+
+    body#page-top
+
+        // Navigation
+        nav#sideNav.navbar.navbar-expand-lg.navbar-dark.bg-primary.fixed-top
+            a.navbar-brand.js-scroll-trigger(href='#page-top')
+                span.d-block.d-lg-none Job Description Paraphraser
+                span.d-none.d-lg-block
+                    img.img-fluid.img-profile.rounded-circle.mx-auto.mb-2(src='assets/img/profile.jpg', alt='Logo')
+            button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarSupportedContent', aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Toggle navigation')
+                span.navbar-toggler-icon
+            #navbarSupportedContent.collapse.navbar-collapse
+                ul.navbar-nav
+                    li.nav-item
+                        a.nav-link.js-scroll-trigger(href='#about') About
+                    li.nav-item
+                        a.nav-link.js-scroll-trigger(href='#first') First Job Ad
+                    li.nav-item
+                        a.nav-link.js-scroll-trigger(href='#education') Second Job Ad
+                    //- li.nav-item
+                    //-     a.nav-link.js-scroll-trigger(href='#skills') Skills
+                    //- li.nav-item
+                    //-     a.nav-link.js-scroll-trigger(href='#interests') Interests
+                    //- li.nav-item
+                    //-     a.nav-link.js-scroll-trigger(href='#awards') Awards
+
+        // Page Content
+        .container-fluid.p-0
+
+            // About
+            section#about.resume-section
+                .resume-section-content
+                    h1.mb-0
+                        | GPT-3 
+                        span.text-primary Paraphraser
+                    .subheading.mb-5
+                        | Remove gender-bias from a job description
+                    p.lead.mb-5
+                        |This demo shows how GPT-3 can be used to paraphrase a gender-biased job descriptions.
+                        |The <span class='highlight text-white'>highlited</span> words belong to a list of "Coded Masculine and Feminine Words" from the <a href='http://google.com' class="link">paper</a>, which should rather be avoided.
+                        |To learn more about it see my  
+                        a(href="medium.com") blog post
+
+                    h3.text-primary 
+                        a(href="#first") Hover your mouse over buletpoints....
+
+                        
+
+            hr.m-0
+
+            // first
+            section#first.resume-section
+               .resume-section-content
+                    h2.mb-5 Administrative assistant
+
+                    .d-flex.flex-column.flex-md-row.justify-content-between.mb-5
+                        .flex-grow-1
+                            h3.mb-0 Company description
+                            //.subheading.mb-3 Intelitec Solutions
+                            ul
+                                li(class='desc') 
+                                    p.un Our organization works to offer every possible advantage to our banking customers.
+                                li(class='desc')
+                                    p.un The company boasts impressive salaries, allowing our employees with financial independence.
+                                li(class='desc')
+                                    p.un We are determined to stand apart from the competition.
+                        .flex-shrink-0
+                            span.text-primary  
+
+                    .d-flex.flex-column.flex-md-row.justify-content-between.mb-5
+                        .flex-grow-1
+                            h3.mb-0 Qualifications
+                            //.subheading.mb-3 Intelitec Solutions
+                            ul
+                                li(class='desc')
+                                    p.desc Ability to deal with multiple senior staff in a demanding environment and navigate office hierarchy.
+                                li(class='desc')
+                                    p.desc Polite; sensitive to needs of other employees and clients.
+                                li(class='desc')
+                                    p.desc Independent and self-reliant.
+                                li(class='desc')
+                                    p.desc Strong computer skills.
+                        .flex-shrink-0
+                            span.text-primary   
+                    
+                    .d-flex.flex-column.flex-md-row.justify-content-between.mb-5
+                        .flex-grow-1
+                            h3.mb-0 Responsibilities
+                            //.subheading.mb-3 Intelitec Solutions
+                            ul
+                                li(class='desc')
+                                    p.un Organize and monitor office tasks and processes so that work progresses more efficiently.
+                                li(class='desc')
+                                    p.un Connect and develop relationships with a variety of clients (e.g., other businesses).
+                                li(class='desc')
+                                    p.un Control incoming and outgoing shipments.
+                        .flex-shrink-0
+                            span.text-primary                     
+
+            hr.m-0
+
+            // Education
+            section#education.resume-section
+                .resume-section-content
+                    h2.mb-5 Second Job
+
+                    .d-flex.flex-column.flex-md-row.justify-content-between.mb-5
+                        .flex-grow-1
+                            h3.mb-0 Company description
+                            //.subheading.mb-3 Intelitec Solutions
+                            ul
+                                li(class='desc') 
+                                    p Our organization works to offer every possible advantage to our banking customers.
+                                li(class='desc')
+                                    p The company boasts impressive salaries, allowing our employees with financial independence.
+                                li(class='desc')
+                                    p We are determined to stand apart from the competition.
+                        .flex-shrink-0
+                            span.text-primary  
+
+                    .d-flex.flex-column.flex-md-row.justify-content-between.mb-5
+                        .flex-grow-1
+                            h3.mb-0 Qualifications
+                            //.subheading.mb-3 Intelitec Solutions
+                            ul
+                                li(class='desc') 
+                                    p.un Ability to deal with multiple senior staff in a demanding environment and navigate office hierarchy.
+                                li(class='desc') 
+                                    p.un Polite; sensitive to needs of other employees and clients.
+                                li(class='desc') 
+                                    p.un Independent and self-reliant.
+                                li(class='desc') 
+                                    p.un Strong computer skills.
+                        .flex-shrink-0
+                            span.text-primary  
+                    
+                    .d-flex.flex-column.flex-md-row.justify-content-between.mb-5
+                        .flex-grow-1
+                            h3.mb-0 Responsibilities
+                            //.subheading.mb-3 Intelitec Solutions
+                            ul
+                                li(class='desc') 
+                                    p.desc Organize and monitor office tasks and processes so that work progresses more efficiently.
+                                li(class='desc') 
+                                    p.desc Connect and develop relationships with a variety of clients (e.g., other businesses).
+                                li(class='desc') 
+                                    p.desc Control incoming and outgoing shipments.
+                        .flex-shrink-0
+                            span.text-primary  
+            hr.m-0
+
+     
+
+
+
+
+        section
+            .footer
+                | Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
+        // Bootstrap core JS
+        script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js')
+        script(src='https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js')
+
+        // Third party plugin JS
+        script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js')
+
+        // Core theme JS
+        script(src='js/scripts.js')
