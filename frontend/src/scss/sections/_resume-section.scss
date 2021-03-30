@@ -24,15 +24,18 @@ section.resume-section {
     }
 }
 
-.highlight {
+  .highlight {
     
     background: -webkit-linear-gradient(to right, #ffa651, #ffc837); /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #ffa651, #ffc837); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     border-radius: 6px;
     padding: 3px 6px;
+    font-weight:400;
+    color: rgb(255, 255, 255);
   }
 
   .un{
+    display: inline-block;
     text-decoration: underline;
     text-decoration-color: transparent;
     transition: 250;
@@ -49,3 +52,5 @@ section.resume-section {
     -webkit-text-decoration-color: #ffa651;
     -moz-text-decoration-color: #ffa651;
    }
+
+   li.desc { cursor: pointer; }

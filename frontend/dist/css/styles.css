@@ -10004,15 +10004,19 @@ h1 {
 }
 
 p.lead {
-  font-size: 1.15rem;
+  font-size: 1.25rem;
   font-weight: 400;
+}
+
+p.un {
+  font-size: 1.1rem;
 }
 
 .subheading {
   font-family: "Saira Extra Condensed", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   text-transform: uppercase;
   font-weight: 500;
-  font-size: 1.5rem;
+  font-size: 1.75rem;
 }
 
 #sideNav .navbar-nav .nav-item .nav-link {
@@ -10044,6 +10048,7 @@ p.lead {
     max-width: 10rem;
     max-height: 10rem;
     border: 0.5rem solid rgba(255, 255, 255, 0.2);
+    background-color: #333b3f;
   }
   #sideNav .navbar-collapse {
     display: flex;
@@ -10118,9 +10123,12 @@ section.resume-section .resume-section-content {
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   border-radius: 6px;
   padding: 3px 6px;
+  font-weight: 400;
+  color: white;
 }
 
 .un {
+  display: inline-block;
   text-decoration: underline;
   text-decoration-color: transparent;
   transition: 250;
@@ -10134,4 +10142,8 @@ section.resume-section .resume-section-content {
   /*add those for opera and mozilla support*/
   -webkit-text-decoration-color: #ffa651;
   -moz-text-decoration-color: #ffa651;
+}
+
+li.desc {
+  cursor: pointer;
 }

@@ -12,3 +12,17 @@ def openfile(filename):
         "text": html
     }
     return data
+
+
+
+def _openfile(filename):
+    filepath = os.path.join("fronted/dist/", filename)
+    with open(filepath, "r", encoding="utf-8") as input_file:
+        text = input_file.read()
+
+    html = markdown.markdown(text)
+    data = {
+        "text": html
+    }
+    return data
+

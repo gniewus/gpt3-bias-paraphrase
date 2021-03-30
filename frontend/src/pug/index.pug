@@ -43,7 +43,7 @@ html(lang='en')
                     li.nav-item
                         a.nav-link.js-scroll-trigger(href='#first') First Job Ad
                     li.nav-item
-                        a.nav-link.js-scroll-trigger(href='#education') Second Job Ad
+                        a.nav-link.js-scroll-trigger(href='#second') Second Job Ad
                     //- li.nav-item
                     //-     a.nav-link.js-scroll-trigger(href='#skills') Skills
                     //- li.nav-item
@@ -62,14 +62,21 @@ html(lang='en')
                         span.text-primary Paraphraser
                     .subheading.mb-5
                         | Remove gender-bias from a job description
-                    p.lead.mb-5
+                    p.lead.mb-5.text-justify
                         |This demo shows how GPT-3 can be used to paraphrase a gender-biased job descriptions.
-                        |The <span class='highlight text-white'>highlited</span> words belong to a list of "Coded Masculine and Feminine Words" from the <a href='http://google.com' class="link">paper</a>, which should rather be avoided.
                         |To learn more about it see my  
-                        a(href="medium.com") blog post
+                        a(href="medium.com") Medium article!
+                    .subheading
+                        | Instructions
+
+                    p.lead.mb-5.text-justify
+                        |Below you can find two job descriptions which contain a lot of gender-biased language. 
+                        |The <span class='highlight text-white'>highlited</span> words belong to a list of "Coded Masculine and Feminine Words" from the <a href='https://www.sussex.ac.uk/webteam/gateway/file.php?name=gendered-wording-in-job-adverts.pdf&site=7' class="link">paper</a>, which should rather be avoided.
+                        |To see GPT-3 in action simply click on the buletpoints to open paraphrasing tooltip. This toolip  provide you suggestions for reprahsing the biased statements.
+                        
 
                     h3.text-primary 
-                        a(href="#first") Hover your mouse over buletpoints....
+                        a.js-scroll-trigger(href="#first") Hover your mouse over buletpoints....
 
                         
 
@@ -85,8 +92,8 @@ html(lang='en')
                             h3.mb-0 Company description
                             //.subheading.mb-3 Intelitec Solutions
                             ul
-                                li(class='desc') 
-                                    p.un Our organization works to offer every possible advantage to our banking customers.
+                                li(class='desc')
+                                    p.un Our company works to offer every possible advantage to our banking customers.
                                 li(class='desc')
                                     p.un The company boasts impressive salaries, allowing our employees with financial independence.
                                 li(class='desc')
@@ -102,7 +109,7 @@ html(lang='en')
                                 li(class='desc')
                                     p.desc Ability to deal with multiple senior staff in a demanding environment and navigate office hierarchy.
                                 li(class='desc')
-                                    p.desc Polite; sensitive to needs of other employees and clients.
+                                    p.desc Cheerful, with strong communication skills.
                                 li(class='desc')
                                     p.desc Independent and self-reliant.
                                 li(class='desc')
@@ -126,8 +133,8 @@ html(lang='en')
 
             hr.m-0
 
-            // Education
-            section#education.resume-section
+            // second
+            section#second.resume-section
                 .resume-section-content
                     h2.mb-5 Second Job
 
