@@ -52,6 +52,8 @@ $ cd fastapi-web-starter
 # Run tests
 $ pytest -v
 ```
+## Credits
+Original paper which helped me build a list of the biased words : https://www.sussex.ac.uk/webteam/gateway/file.php?name=gendered-wording-in-job-adverts.pdf&site=7
 
 ## Licence
 Boilerplate Frontend: Copyright 2013-2020 Start Bootstrap LLC. Code released under the [MIT](https://github.com/StartBootstrap/startbootstrap-resume/blob/gh-pages/LICENSE) license.
