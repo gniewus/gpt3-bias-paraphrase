@@ -1,14 +1,14 @@
 # AI Gender-bias paraphrasing
-## GPT3 used to remove bias from the job adverts
+### GPT3 used to remove bias from the job adverts
 
-Please read the Medium article at ... 
+Medium article: https://medium.com/axel-springer-tech/using-ai-to-tackle-gender-bias-in-job-adverts-a69958953e91
 
-This is a demo of the application for removal of the gender-biased term from job adverts.
 
 ## Overview
 
+This is a demo of the application for removal of the gender-biased term from job adverts.
 A static website ready to deploy.
-This repo includes all the file and it is ready to deploy to Heroku.
+This repo includes all necessary file to deply it to i.e Heroku. 
 
 - .env
 - .gitignore
@@ -24,6 +24,7 @@ This repo includes all the file and it is ready to deploy to Heroku.
 
 ## Installation & Usage
 
+Remeber to set env variables with OPEN_AI_API_KEY. (see the top of the backend)
 ```bash
 
 # change the directory
